@@ -29,10 +29,9 @@
 
     
     <div class="sidenav">
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        {% for single_log in logs_list %}
+            <a href="#"> {{ single_log.logName }} </a>
+        {% endfor %}
     </div>
     <div class="log-viewer">
         <div class="main">

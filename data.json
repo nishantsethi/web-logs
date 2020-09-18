@@ -1,0 +1,16 @@
+{
+    "logs" : [
+        {
+            "logName" : "Log 1",
+            "logPath" : "example.log"
+        },
+        {
+            "logName" : "Log 2",
+            "logPath" : "example.log" 
+        },
+        {
+            "logName" : "Log 3",
+            "logPath" : "example.log" 
+        }
+    ]
+}
