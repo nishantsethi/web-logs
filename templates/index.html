@@ -29,7 +29,11 @@
 
     
     <div class="sidenav">
+        <form method="post" action="/">
         {% for single_log in logs_list %}
+            <input type="submit" value={{ single_log.logName}} name={{ single_log.ID}}/>
+
+    </form>
             <a href="#"> {{ single_log.logName }} </a>
         {% endfor %}
     </div>
