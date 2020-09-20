@@ -30,16 +30,17 @@
     
     <div class="sidenav">
         <form method="post" action="/">
+            <input type="hidden" name="text" value="1p" id="minput" />
         {% for single_log in logs_list %}
-            <input type="submit" value={{ single_log.logName}} name={{ single_log.ID}}/>
-
-    </form>
-            <a href="#"> {{ single_log.logName }} </a>
+            
+            <input type="submit" value='{{ single_log.logName}}' name="submit" onclick="text.value= '{{ single_log.ID }}' "/>
+            <!-- <a href="#"> {{ single_log.logName }} </a> -->
         {% endfor %}
+    </form>
     </div>
     <div class="log-viewer">
         <div class="main">
-            <h2>Sidenav Example</h2>
+            <h3>Log Name: {{log_name}}</h3>
             <p>This is the latest output: <span id="latest"></span></p>
             <p>This is all the output:</p>
             {{log_id}}
