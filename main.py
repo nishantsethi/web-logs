@@ -3,12 +3,14 @@ from flask import Flask, render_template, request
 from math import sqrt
 from pathlib import Path
 import json
-
+import os
 
 app = Flask(__name__)
 
 
 class WebLogs:
+    current_working_dir = str(Path.cwd())
+    
     def __init__(self, json_path: str):
         self.json_path = json_path
         self.__create_file(self.current_working_dir)
