@@ -8,10 +8,16 @@ import json
 app = Flask(__name__)
 
 
-# class WebLogs:
-#     def __init__(self, json_path: str):
-#         self.json_path = json_path
-#         current_working_dir = str(Path.cwd())
+class WebLogs:
+    def __init__(self, json_path: str):
+        self.json_path = json_path
+        self.__create_file(self.current_working_dir)
+
+    def __create_file(self, current_working_dir):
+        if os.path.exists(self.current_working_dir + "/templates"):
+            print("templates exists")
+        else:
+            print("Does not exist")
 
 
 json_path = "data.json"
