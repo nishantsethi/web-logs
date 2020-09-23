@@ -47,7 +47,9 @@ class WebLogs:
                 self.logger.error("An attempt was made to create the \"static\" folder but was unsuccesfull. Please make \
                     sure the directory has write permissions.")
                 
-            
+        
+    def __create_files(self,current_working_dir):
+        
         
 
     def __check_dir_exist(self, directory):
