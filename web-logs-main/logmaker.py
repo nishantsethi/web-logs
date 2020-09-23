@@ -1,3 +1,5 @@
+#A dummy file to create a stream of logs, sevral instances can be run to test the program.
+
 import logging
 import time
 
