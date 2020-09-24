@@ -1,0 +1,95 @@
+<html>
+<head><title> Web Logs </title>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-39547708-2');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}"
+</head>
+
+<body>
+    <!-- Nav Bar Starts here -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+          <div class="container">
+            <a class="navbar-brand mr-4" href="/">Web Logs</a>
+            </div>
+          </div>
+        </nav>
+    <!-- Nav Bar Ends here -->
+
+    <br>
+    <br>
+    <br>
+
+    
+    <div class="sidenav">
+        <form method="post" action="/">
+            <input type="hidden" name="text" value="1p" id="minput" />
+        {% for single_log in logs_list %}
+            
+            <input type="submit" value='{{ single_log.logName}}' name="submit" onclick="text.value= '{{ single_log.ID }}' "/>
+            <!-- <a href="#"> {{ single_log.logName }} </a> -->
+        {% endfor %}
+    </form>
+    </div>
+    <div class="log-viewer">
+        <div class="main">
+            <h3>Log Name: {{log_name}}</h3>
+            <p>This is the latest output: <span id="latest"></span></p>
+            <p>This is all the output:</p>
+            {{log_id}}
+            <ul id="output"></ul>
+        </div>
+    </div>
+
+
+
+
+
+
+<!-- Scripts -->
+
+
+<script>
+    var latest = document.getElementById('latest');
+    var output = document.getElementById('output');
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '{{ url_for('stream') }}');
+    xhr.send();
+    var position = 0;
+
+    function handleNewData() {
+        // the response text include the entire response so far
+        // split the messages, then take the messages that haven't been handled yet
+        // position tracks how many messages have been handled
+        // messages end with a newline, so split will always show one extra empty message at the end
+        var messages = xhr.responseText.split('\n');
+        messages.slice(position, -1).forEach(function(value) {
+            latest.textContent = value;  // update the latest value in place
+            // build and append a new item to a list to log all output
+            var item = document.createElement('li');
+            item.textContent = value;
+            output.appendChild(item);
+        });
+        position = messages.length - 1;
+    }
+
+    var timer;
+    timer = setInterval(function() {
+        // check the response for new data
+        handleNewData();
+        // stop checking once the response has ended
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            clearInterval(timer);
+            latest.textContent = 'Done';
+        }
+    }, 1000);
+</script>
+</body>
