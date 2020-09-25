@@ -1,0 +1,1 @@
+from .weblogs import WebLogs
