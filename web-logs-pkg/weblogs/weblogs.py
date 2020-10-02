@@ -58,25 +58,29 @@ class WebLogs:
 
         temp_dir_local = current_working_dir + "/templates"
         static_dir_local = current_working_dir + "/static"
-        app_dir_local = current_working_dir 
+        app_dir_local = current_working_dir
+        text_dir_local =  current_working_dir
         
         index_dir_root = self.__get_data("index.html")
         style_dir_root = self.__get_data("style.css")
         app_dir_root = self.__get_data("app.py")
+        text_dir_root = self.__get_data("json_path.txt")
         
         ## Copy index.html
         try:
             copyfile(index_dir_root, temp_dir_local)
             self.logger.debug("The Index.html has been created")
-        except:
-            self.logger.error('An attempt was made to copy "index.html" file but was unsuccesfull. Please make \
-                    sure the directory' + temp_dir_local + ' has write permissions.')
+        except Exception as e:
+            print(e)
+            self.logger.error('An attempt was made to copy "index.html" file but was unsuccesfull. Please make' + \
+                    'sure the directory' + temp_dir_local + ' has write permissions.')
 
         ## Copy Style.css
         try:
             copyfile(style_dir_root, static_dir_local)
             self.logger.debug("The style.css file has been created")
-        except:
+        except Exception as e:
+            print(e)
             self.logger.error('An attempt was made to copy "Style.css" file but was unsuccesfull. Please make \
                     sure the directory ' + static_dir_local + ' has write permissions.')
         
@@ -84,8 +88,17 @@ class WebLogs:
         try:
             copyfile(app_dir_root, app_dir_local)
             self.logger.debug("The file app.py has been created")
-        except:
+        except Exception as e:
+            print(e)
             self.logger.error('An attempt was made to copy "app.py" file but was unsuccesfull. Please make \
+                    sure the directory' + app_dir_local + ' has write permissions.')
+
+        ## Copy json_path.text
+        try:
+            copyfile(text_dir_root, text_dir_local)
+            self.logger.debug("The file json_path.txt has been created")
+        except:
+            self.logger.error('An attempt was made to copy "json_path.txt" file but was unsuccesfull. Please make \
                     sure the directory' + app_dir_local + ' has write permissions.')
         
 

@@ -9,8 +9,9 @@ import st
 app = Flask(__name__)
 
 
+path_json = open("json_path.txt", "r")
 
-json_path = st.st_json_path    ## Change this to change json path
+json_path = path_json.read()
 data_json = json.load(open(json_path))
 
 logs_list = data_json['logs']    #List with all the logs info in each dict [{}{}]

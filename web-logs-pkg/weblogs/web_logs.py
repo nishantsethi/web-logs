@@ -7,7 +7,7 @@ from shutil import copyfile
 from .weblogs import WebLogs
 import pkg_resources
 
-DATA_PATH = pkg_resources.resource_filename('weblogs', 'data/index.html')
+DATA_PATH = pkg_resources.resource_filename('weblogs', 'data')
 
 def main():
 
@@ -23,10 +23,13 @@ def main():
     # Variables
     json_path = args.path_to_json
 
-    # st.st_json_path = json_path
+    json_file_txt = open(DATA_PATH + "/json_path.txt","w")
+    json_file_txt.write(json_path)
+    json_file_txt.close()
+
 
     print(json_path)
 
-    # WebLogs(json_path)
+    WebLogs(json_path)
     
 main()

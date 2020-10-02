@@ -8,7 +8,7 @@ long_description = 'A python package to views live logs of any application(s) \
   
 setup( 
         name ='weblogs', 
-        version ='1.0.2', 
+        version ='1.0.5', 
         author ='Nishant Sethi', 
         author_email ='sethi.nishant43@gmail.com', 
         url ='https://github.com/nishantsethi/web-logs', 
@@ -17,10 +17,10 @@ setup(
         long_description_content_type ="text/markdown", 
         license ='MIT', 
         packages = find_packages(),
-        package_data={'web-logs': ['data/index.html']},
+        package_data={'weblogs': ['data/index.html', 'data/app.py', 'data/style.css','data/json_path.txt' ]},
         entry_points ={ 
             'console_scripts': [ 
-                'web-logs = web_logs.web_logs:main'
+                'weblogsadmin = weblogs.web_logs:main'
             ] 
         }, 
         classifiers =[
