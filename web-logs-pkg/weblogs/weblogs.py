@@ -56,10 +56,10 @@ class WebLogs:
 
         current_working_dir = self.current_working_dir
 
-        temp_dir_local = current_working_dir + "/templates"
-        static_dir_local = current_working_dir + "/static"
-        app_dir_local = current_working_dir
-        text_dir_local =  current_working_dir
+        temp_dir_local = current_working_dir + "/templates/index.html"
+        static_dir_local = current_working_dir + "/static/style.css"
+        app_dir_local = current_working_dir + "/app.py"
+        text_dir_local =  current_working_dir + "/json_path.txt"
         
         index_dir_root = self.__get_data("index.html")
         style_dir_root = self.__get_data("style.css")
@@ -97,7 +97,8 @@ class WebLogs:
         try:
             copyfile(text_dir_root, text_dir_local)
             self.logger.debug("The file json_path.txt has been created")
-        except:
+        except Exception as e:
+            print(e)
             self.logger.error('An attempt was made to copy "json_path.txt" file but was unsuccesfull. Please make \
                     sure the directory' + app_dir_local + ' has write permissions.')
         

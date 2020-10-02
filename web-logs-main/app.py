@@ -21,6 +21,10 @@ class WebLogs:
         else:
             print("Does not exist")
 
+# path_json = open("json_path.txt", "r")
+
+# json_path = path_json.read()
+# data_json = json.load(open(json_path))
 
 json_path = "data.json"
 data_json = json.load(open(json_path))
