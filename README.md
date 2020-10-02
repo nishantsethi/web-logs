@@ -11,7 +11,7 @@ pip3 install weblogs
 ## Usage
 The package uses a json file to get the path and names of multiple Log files. The Json file need not be in the Project directory but it is still recommended to keep it there to prevent accidental deletion. To initilize the package you will be required to provide the full path of the json file. An example json file is given below -
 example.json
-`
+```
 {
     "logs" : [
         {
@@ -28,7 +28,7 @@ example.json
         }
     ]
 }
-`
+```
 The Log file needs to be in text editable format.
 
 
