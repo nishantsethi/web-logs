@@ -38,3 +38,14 @@ After installing the package, go the the main directory where you would like to 
 weblogsadmin create path/to/json
 ```
 
+### Todos
+
+ - Write Tests
+ - Add Night Mode
+ - Make new working with Cookie cutter
+
+
+License
+----
+
+MIT
