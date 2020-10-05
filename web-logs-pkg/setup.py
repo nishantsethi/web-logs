@@ -8,7 +8,7 @@ long_description = 'A python package to views live logs of any application(s) \
   
 setup( 
         name ='weblogs', 
-        version ='1.0.9', 
+        version ='1.0.10', 
         author ='Nishant Sethi', 
         author_email ='sethi.nishant43@gmail.com', 
         url ='https://github.com/nishantsethi/web-logs', 
