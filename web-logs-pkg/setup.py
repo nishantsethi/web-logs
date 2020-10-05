@@ -3,12 +3,13 @@ from setuptools import setup, find_packages
 with open('requirements.txt') as f: 
     requirements = f.readlines() 
   
-long_description = 'A python package to views live logs of any application(s) \
-    on browser. Uses Flask to put pages on the web.' 
+with open("README.md") as d:
+    long_description = d.read()
+
   
 setup( 
         name ='weblogs', 
-        version ='1.1.6', 
+        version ='1.1.7', 
         author ='Nishant Sethi', 
         author_email ='sethi.nishant43@gmail.com', 
         url ='https://github.com/nishantsethi/web-logs', 
