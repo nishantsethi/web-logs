@@ -23,8 +23,6 @@ def main():
     # Variables
     json_path = args.path_to_json
 
-    print(json_path)
 
     WebLogs(json_path)
     
-main()

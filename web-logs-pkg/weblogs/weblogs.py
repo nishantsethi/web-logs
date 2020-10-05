@@ -15,8 +15,13 @@ class WebLogs:
         self.json_path = json_path
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(logging.DEBUG)
-        self.__create_dir()
-        self.__create_files()
+        try:
+            self.__create_dir()
+            self.__create_files()
+            print("Files created successfully. Please run the following - python app.py")
+        except:
+            print("There was something wrong while installation. Please create an issue at https://github.com/nishantsethi/web-logs/issues/new")
+        
         
 
 
@@ -31,7 +36,7 @@ class WebLogs:
         else:
             os.makedirs(temp_dir)
             self.logger.debug("The Template folder has been created")
-            if self.__check_dir_exist(static_dir):
+            if self.__check_dir_exist(temp_dir):
                 self.logger.debug("The Template folder has been created")
             else:    
                 self.logger.error("An attempt was made to create the \"templates\" folder but was unsuccesfull. Please make \
@@ -49,6 +54,7 @@ class WebLogs:
             else:    
                 self.logger.error("An attempt was made to create the \"static\" folder but was unsuccesfull. Please make \
                     sure the directory has write permissions.")
+
                 
         
     def __create_files(self):
