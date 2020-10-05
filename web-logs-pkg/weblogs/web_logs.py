@@ -23,11 +23,6 @@ def main():
     # Variables
     json_path = args.path_to_json
 
-    json_file_txt = open(DATA_PATH + "/json_path.txt","w")
-    json_file_txt.write(json_path)
-    json_file_txt.close()
-
-
     print(json_path)
 
     WebLogs(json_path)

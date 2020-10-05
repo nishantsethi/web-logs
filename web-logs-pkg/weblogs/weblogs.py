@@ -1,14 +1,15 @@
 from pathlib import Path
 import os
 import logging
-from shutil import copyfile
+import pkg_resources
+
 
 
 
 
 class WebLogs:
     current_working_dir = str(Path.cwd())
-    root_dir = os.path.abspath(os.path.dirname(__file__))
+    root_dir = pkg_resources.resource_filename('weblogs', 'data')
     
     def __init__(self, json_path: str):
         self.json_path = json_path
@@ -64,11 +65,10 @@ class WebLogs:
         index_dir_root = self.__get_data("index.html")
         style_dir_root = self.__get_data("style.css")
         app_dir_root = self.__get_data("app.py")
-        text_dir_root = self.__get_data("json_path.txt")
         
         ## Copy index.html
         try:
-            copyfile(index_dir_root, temp_dir_local)
+            self.__read_only_cp(index_dir_root, temp_dir_local)
             self.logger.debug("The Index.html has been created")
         except Exception as e:
             print(e)
@@ -77,7 +77,7 @@ class WebLogs:
 
         ## Copy Style.css
         try:
-            copyfile(style_dir_root, static_dir_local)
+            self.__read_only_cp(style_dir_root, static_dir_local)
             self.logger.debug("The style.css file has been created")
         except Exception as e:
             print(e)
@@ -86,16 +86,17 @@ class WebLogs:
         
         ## Copy App.py
         try:
-            copyfile(app_dir_root, app_dir_local)
+            self.__read_only_cp(app_dir_root, app_dir_local)
             self.logger.debug("The file app.py has been created")
         except Exception as e:
             print(e)
             self.logger.error('An attempt was made to copy "app.py" file but was unsuccesfull. Please make \
                     sure the directory' + app_dir_local + ' has write permissions.')
 
-        ## Copy json_path.text
         try:
-            copyfile(text_dir_root, text_dir_local)
+            dats = open(text_dir_local,"w")
+            dats.write(self.json_path)
+            dats.close()
             self.logger.debug("The file json_path.txt has been created")
         except Exception as e:
             print(e)
@@ -108,3 +109,11 @@ class WebLogs:
 
     def __check_dir_exist(self, directory):
         return os.path.exists(directory)
+
+    def __read_only_cp(self,source, target):
+        file = open(source,mode='r')
+        all_of_it = file.read()
+
+        dats = open(target,"w")
+        dats.write(all_of_it)
+        dats.close()
