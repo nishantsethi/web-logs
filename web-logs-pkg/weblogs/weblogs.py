@@ -105,7 +105,7 @@ class WebLogs:
         
 
     def __get_data(self, fileName):
-        return os.path.join(self.root_dir, 'data', fileName)
+        return os.path.join(self.root_dir, fileName)
 
     def __check_dir_exist(self, directory):
         return os.path.exists(directory)
