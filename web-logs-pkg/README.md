@@ -1,5 +1,5 @@
 # WebLogs
-A python package to stream live logs of any application(s) on browser using flask
+Weblogs is a python package that gives you capability of streaming logs to the browser. It's a tail -F with UI. Multiple logs from different paths can be added by providing the details in a json file. 
 
 # Installation
 The package can be installed using pip by typing the pollowing-
@@ -38,14 +38,6 @@ After installing the package, go the the main directory where you would like to 
 weblogsadmin create path/to/json
 ```
 
-### Todos
+## Screenshot
+![Main Page](https://user-images.githubusercontent.com/19774313/93512859-90c1d000-f942-11ea-82b0-69042f5ce68e.png)
 
- - Write Tests
- - Add Night Mode
- - Make new working with Cookie cutter
-
-
-License
-----
-
-MIT
