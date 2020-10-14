@@ -2,7 +2,7 @@
 Weblogs is a python package that gives you capability of streaming logs to the browser. It's a tail -F with UI. Multiple logs from different paths can be added by providing the details in a json file. 
 
 # Installation
-The package can be installed using pip by typing the pollowing-
+The package can be installed using pip by typing the following-
 ```sh
 pip3 install weblogs
 ```
