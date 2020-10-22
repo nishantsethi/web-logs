@@ -15,15 +15,15 @@ example.json
 {
     "logs" : [
         {
-            "logName" : "Log 1",
+            "logName" : "Logs 1",
             "logPath" : "Log1.log"
         },
         {
-            "logName" : "Log 2",
+            "logName" : "Logs 2",
             "logPath" : "log2.log" 
         },
         {
-            "logName" : "Log 3",
+            "logName" : "Logs 3",
             "logPath" : "log3.log" 
         }
     ]
