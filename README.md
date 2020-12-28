@@ -41,3 +41,6 @@ weblogsadmin create path/to/json
 ## Screenshot
 ![Main Page](https://user-images.githubusercontent.com/19774313/93512859-90c1d000-f942-11ea-82b0-69042f5ce68e.png)
 
+## Build Log
+A more detailed blog about this package can be found here - [Web Logs - A tail -f on web](https://nishantsethi.me/2020/12/28/web-logs-a-tail-f-on-web/)
+
