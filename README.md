@@ -2,7 +2,7 @@
 Weblogs is a python package that gives you capability of streaming logs to the browser. It's a tail -F with UI. Multiple logs from different paths can be added by providing the details in a json file. 
 
 # Installation
-The package can be installed using pip by typing the pollowing-
+The package can be installed using pip by typing the following-
 ```sh
 pip3 install weblogs
 ```
@@ -15,15 +15,15 @@ example.json
 {
     "logs" : [
         {
-            "logName" : "Log 1",
+            "logName" : "Logs 1",
             "logPath" : "Log1.log"
         },
         {
-            "logName" : "Log 2",
+            "logName" : "Logs 2",
             "logPath" : "log2.log" 
         },
         {
-            "logName" : "Log 3",
+            "logName" : "Logs 3",
             "logPath" : "log3.log" 
         }
     ]
@@ -40,4 +40,7 @@ weblogsadmin create path/to/json
 
 ## Screenshot
 ![Main Page](https://user-images.githubusercontent.com/19774313/93512859-90c1d000-f942-11ea-82b0-69042f5ce68e.png)
+
+## Build Log
+A more detailed blog about this package can be found here - [Web Logs - A tail -f on web](https://nishantsethi.me/2020/12/28/web-logs-a-tail-f-on-web/)
 
