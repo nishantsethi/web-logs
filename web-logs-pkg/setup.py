@@ -9,7 +9,7 @@ with open("README.md") as d:
   
 setup( 
         name ='weblogs', 
-        version ='1.1.7', 
+        version ='1.1.8', 
         author ='Nishant Sethi', 
         author_email ='sethi.nishant43@gmail.com', 
         url ='https://github.com/nishantsethi/web-logs', 
